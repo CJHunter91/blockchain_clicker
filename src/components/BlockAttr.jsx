@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlockAttr = () => {
   return(
-    <ul>
+    <ul id="block-attr" className="list">
       <li>Block#</li>
       <li>Hash:</li>
       <li>Prev Hash:</li>

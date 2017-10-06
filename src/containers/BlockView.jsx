@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import BlockAttr from '../components/BlockAttr';
+import BlockTransactions from '../components/BlockTransactions';
 
 class BlockView extends Component{
 
@@ -7,7 +8,7 @@ class BlockView extends Component{
     return(
       <article id="block-view">
         <BlockAttr/>
-        
+        <BlockTransactions/>
       </article>
       )
   }
