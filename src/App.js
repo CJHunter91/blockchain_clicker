@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StatusBar from './containers/StatusBar'
 import BlockView from './containers/BlockView'
+import BlockchainInfo from './containers/BlockchainInfo'
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       <section>
         <StatusBar/>
         <BlockView/>
+        <BlockchainInfo/>
       </section>
     );
   }
