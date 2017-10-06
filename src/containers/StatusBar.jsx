@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
+import StatusList from '../components/StatusList';
 
 class StatusBar extends Component{
 
   render(){
     return(
-        <section>
-          <ul>
-            <li>Coin: 100</li>
-          </ul>
+        <section id="status-section" className="status">
+          <StatusList />
         </section>
       )
   }
