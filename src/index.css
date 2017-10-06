@@ -3,3 +3,25 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+#main-view{
+
+
+}
+
+article{
+  border: 2px solid;
+}
+
+#block-view{
+  width: 90%;
+  margin: 10px;
+  min-height: 50vw;
+}
+
+#blockchain-info{
+  position: fixed;
+  min-height: 50vw;
+  bottom: 0;
+  width: 100%;
+}

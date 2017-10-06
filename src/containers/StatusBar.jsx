@@ -5,9 +5,9 @@ class StatusBar extends Component{
 
   render(){
     return(
-        <section id="status-section" className="status">
+        <article id="status" className="status">
           <StatusList />
-        </section>
+        </article>
       )
   }
 }

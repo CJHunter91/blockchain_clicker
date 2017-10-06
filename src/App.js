@@ -6,9 +6,11 @@ import BlockchainInfo from './containers/BlockchainInfo'
 class App extends Component {
   render() {
     return (
-      <section>
+      <section id="main-view">
         <StatusBar/>
         <BlockView/>
+        <button> Mine </button>
+        <button> Shop </button>
         <BlockchainInfo/>
       </section>
     );
