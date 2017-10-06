@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import StatusBar from './containers/StatusBar'
+import BlockView from './containers/BlockView'
 
 class App extends Component {
   render() {
     return (
-      <StatusBar/>
+      <section>
+        <StatusBar/>
+        <BlockView/>
+      </section>
     );
   }
 }
