@@ -4,6 +4,10 @@ import BlockView from './containers/BlockView'
 import BlockchainInfo from './containers/BlockchainInfo'
 
 class App extends Component {
+
+  constructor(){
+    super()
+  }
   render() {
     return (
       <section id="main-view">
