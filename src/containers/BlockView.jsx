@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
+import BlockAttr from '../components/BlockAttr';
 
 class BlockView extends Component{
 
   render(){
     return(
-        <ul>
-          <li>Block#</li>
-          <li>Hash:</li>
-          <li>Prev Hash:</li>
-          <li>Nonce:</li>
-        </ul>
+      <article id="block-view">
+        <BlockAttr/>
+        
+      </article>
       )
   }
 }

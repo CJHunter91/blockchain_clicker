@@ -1,6 +1,6 @@
 import React from 'react';
 
-var StatusList = () => {
+const StatusList = () => {
   return(
     <ul>
       <li>Coin: 100</li>
