@@ -6,7 +6,7 @@ class BlockchainInfo extends Component{
   render(){
     return(
       <article id="blockchain-info">
-        <BlockchainText/>
+        <BlockchainText text={this.props.text}/>
       </article>
       )
   }

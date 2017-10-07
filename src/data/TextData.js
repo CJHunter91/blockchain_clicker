@@ -1,6 +1,6 @@
 
 
-const TextData = [
+const textData = [
 { 
   id: 1,
   text: "Welcome to the Blockchain Clicker app. Hit the mine button to start playing and learning."
@@ -14,4 +14,4 @@ const TextData = [
 
 
 
-export default TextData;
+export default textData;

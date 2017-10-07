@@ -1,8 +1,8 @@
 import React from 'react';
 
-const BlockchainText = () => {
+const BlockchainText = (props) => {
   return(
-      <p id="blockchain-text">Information about the Blockchain</p>
+      <p id="blockchain-text"> {props.text.text}</p>
     )
 }
 
