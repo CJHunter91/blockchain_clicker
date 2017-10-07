@@ -2,8 +2,9 @@
 class Block {
 
   constructor(){
-    this.preHash = null
-    this.hash = null
+    this.number = 1;
+    this.prevHash = '000000'
+    this.hash = null;
     this.transactions = []
     this.nonce = 0;
   }
