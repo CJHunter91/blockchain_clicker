@@ -14,9 +14,13 @@ class BlockStatus extends Component{
   }
 
   startMine(){
-    const blockCopy = this.state.block;
+    var blockCopy = this.state.block;
     blockCopy.addToNonce();
-    this.state.logic.rewardUser();
+    if(this.state.logic.rewardUser()){
+      this.state.logic.loadNextBlock()
+       blockCopy = this.state.logic.currentBlock;
+    }
+    console.log(blockCopy)
     this.setState({block: blockCopy});
     console.log(this.state.logic.difficulty);
     console.log(this.state.block.hash)

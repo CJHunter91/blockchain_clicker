@@ -3,13 +3,20 @@ var converter = require('hex2dec');
 
 class Block {
 
-  constructor(){
-    this.number = 1;
-    this.prevHash = "0000000000000000"
+
+  constructor(prevHash = "0000000000000000", transactions = []){
+    this.number = Block.incrementNumber();
+    this.prevHash = prevHash
     this.hash = null;
-    this.transactions = []
+    this.transactions = transactions
     this.nonce = 0;
     this.convertToHash();
+  }
+
+  static incrementNumber() {
+    if (!this.number) this.number = 1
+    else this.number++
+    return this.number
   }
 
   convertToHash(){

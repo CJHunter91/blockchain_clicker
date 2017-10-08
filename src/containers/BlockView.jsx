@@ -1,25 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
 import BlockAttr from '../components/BlockAttr';
 import BlockTransactions from '../components/BlockTransactions';
 
-class BlockView extends Component{
+const BlockView = (props) => {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      block: props.block,
-      transactions: props.block.transactions
-    }
-  }
-
-  render(){
     return(
       <article id="block-view">
-        <BlockAttr block={this.state.block}/>
-        <BlockTransactions/>
+        <BlockAttr block={props.block}/>
+        <BlockTransactions transactions={props.block.transactions}/>
       </article>
       )
-  }
 }
 
 export default BlockView;
