@@ -11,12 +11,12 @@ article{
 #block-view{
   width: 90%;
   margin: 10px;
-  min-height: 50vw;
+  min-height: 200px;
 }
 
 #blockchain-info{
   position: fixed;
-  min-height: 50vw;
   bottom: 0;
   width: 100%;
+  min-height: 300px;
 }

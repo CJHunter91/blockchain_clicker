@@ -6,7 +6,7 @@ class StatusBar extends Component{
   render(){
     return(
         <article id="status" className="status">
-          <StatusList />
+          <StatusList user={this.props.user} />
         </article>
       )
   }

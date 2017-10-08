@@ -1,9 +1,10 @@
 import React from 'react';
 
-const StatusList = () => {
+const StatusList = (props) => {
   return(
     <ul id="status-list" className="list">
-      <li>Coin: 100</li>
+      <li>Coin: {props.user.coin}</li>
+      <li>Power: {props.user.power}</li>
     </ul>
     )
 }

@@ -9,7 +9,6 @@ const ResourceData = [
   cost: 2, 
   multiplier: 1.3
 }
-
 ]
 
 

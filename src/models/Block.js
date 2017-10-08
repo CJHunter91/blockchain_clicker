@@ -5,7 +5,7 @@ class Block {
 
   constructor(){
     this.number = 1;
-    this.prevHash = "00000000000"
+    this.prevHash = "0000000000000000"
     this.hash = null;
     this.transactions = []
     this.nonce = 0;
@@ -18,7 +18,12 @@ class Block {
     + this.transactions.toString() 
     + this.nonce.toString();
     const decimal = converter.hexToDec(sha256(concat))
-    this.hash = decimal / (10 ** (decimal.length - 16))
+    this.hash = decimal / (10 ** (77 - 16))
+  }
+
+  addToNonce(){
+    this.nonce++
+    this.convertToHash()
   }
 
 }
