@@ -19,8 +19,10 @@ class BlockStatus extends Component{
     if(this.state.logic.rewardUser()){
       this.state.logic.loadNextBlock()
        blockCopy = this.state.logic.currentBlock;
+       const btn = document.querySelector('#mine-btn')
+       btn.disabled = true;
+       setTimeout(() => { btn.disabled = false }, 2000);
     }
-    console.log(blockCopy)
     this.setState({block: blockCopy});
     console.log(this.state.logic.difficulty);
     console.log(this.state.block.hash)
@@ -32,8 +34,8 @@ class BlockStatus extends Component{
       <section id="block-game">
        <StatusBar user={this.state.user}/>
        <BlockView block={this.state.block}/>
-       <button onClick={this.startMine.bind(this)}> Mine  </button>
-       <button> Shop </button>
+       <button id="mine-btn" onClick={this.startMine.bind(this)}> Mine  </button>
+       <button id="shop-btn"> Shop </button>
       </section>
       )
   }
