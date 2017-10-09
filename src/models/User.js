@@ -10,6 +10,13 @@ class User {
   buy(resource){
     if("canAfford function"){
       this.resources.push(resource)
+      this.calculatePower();
+    }
+  }
+
+  calculatePower(){
+    for(let resource of this.resources){
+      this.power += resource.multiplier;
     }
   }
 }
