@@ -13,9 +13,12 @@ const ShopList = (props) => {
   })
 
     return(
-        <ul>
-        {resourceList}
-        </ul>
+        <div id="shop-list" class="modal-content">
+          <span class="close">&times;</span>
+          <ul>
+          {resourceList}
+          </ul>
+        </div>
       )
 }
 
