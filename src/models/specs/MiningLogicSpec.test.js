@@ -1,16 +1,17 @@
-var assert = require('assert');
-var Logic = require('../MiningLogic')
+import MiningLogic from '../MiningLogic'
 
 //add test for getting next text data
-describe("Mining Logic Tests", function() {
 
-  var logic;
+var logic;
 
-  beforeEach(function(){
-    logic = new Logic();
-  })
+beforeEach(() => {
+  console.log(MiningLogic);
+  logic = new MiningLogic();
+});
 
-  it("should get next text TextItem", function(){
-    assert.equals();
-  })
+test("should get next text TextItem", function(){
+  var currentTextID = logic.textData.id;
+  console.log(currentTextID)
+  logic.loadNextText(); 
+  expect(logic.textData.id).toBe(currentTextID + 1);
 })

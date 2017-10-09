@@ -1,9 +1,13 @@
-var assert = require('assert');
-var Block = require('../Block')
+import Block from '../Block';
+
+var block;
+
+beforeEach(() => {
+  block = new Block();
+});
 
 test('should increase nonce by 1', function() {
-  var block = new Block();
   var nonce = block.nonce;
   block.addToNonce();
-  assert.equal(block.nonce, nonce + 1);
+  expect(block.nonce).toBe(nonce + 1);
 });
