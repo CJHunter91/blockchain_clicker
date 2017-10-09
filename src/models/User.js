@@ -8,7 +8,7 @@ class User {
 
 
   buy(resource){
-    if("canAfford function"){
+    if(this.coin >= resource.cost){
       this.resources.push(resource)
       this.calculatePower();
     }

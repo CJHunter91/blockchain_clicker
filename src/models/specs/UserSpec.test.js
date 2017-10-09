@@ -22,3 +22,9 @@ test('should calculate power', () => {
     user.buy(res)
     expect(user.power).toBe(1.2);
 });
+
+test('should check cant afford resource', () => {
+  user.coin = 0;
+  user.buy(res);
+  expect(user.resources.length).toBe(0);
+})
