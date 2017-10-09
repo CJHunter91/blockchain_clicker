@@ -30,12 +30,19 @@ class BlockStatus extends Component{
     console.log(this.state.block.hash < this.state.logic.difficulty)
   }
 
+  buyResource(resource){
+    var userCopy = this.state.user;
+    console.log(userCopy, this, resource)
+    userCopy.buy(resource);
+    this.setState({user: userCopy})
+  }
+
   render(){
     return(
       <section id="block-game">
         <StatusBar user={this.state.user}/>
         <BlockView block={this.state.block}/>
-        <ShopView />
+        <ShopView userBuy={this.buyResource.bind(this)} resources={this.state.logic.resources} />
         <div id="buttons">
           <button id="mine-btn" onClick={this.startMine.bind(this)}> Mine  </button>
           <button id="shop-btn"> Shop </button>

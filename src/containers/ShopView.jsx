@@ -1,11 +1,11 @@
 import React from 'react';
 import ShopList from '../components/ShopList';
 
-const ShopView = () => {
+const ShopView = (props) => {
 
     return(
         <article id="shop-view" className="shop">
-          <ShopList />
+          <ShopList userBuy={props.userBuy} resources={props.resources}/>
         </article>
       )
 }

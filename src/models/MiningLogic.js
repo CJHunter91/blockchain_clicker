@@ -8,7 +8,7 @@ class MiningLogic{
 
   constructor(){
     this.attemptedMines = 0;
-    this.difficulty = (1*10**15  - 1);
+    this.difficulty = (10**15  - 1);
     this.target = null;
     this.reward = 50;
     this.blocks = [];

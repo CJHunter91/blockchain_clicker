@@ -8,16 +8,22 @@ class User {
 
 
   buy(resource){
+    let didBuy = false;
     if(this.coin >= resource.cost){
       this.resources.push(resource)
       this.calculatePower();
+      didBuy = true;
     }
+    return didBuy;
   }
 
   calculatePower(){
+    var total = 0
     for(let resource of this.resources){
-      this.power += resource.multiplier;
+      console.log(this.power)
+      total += resource.multiplier;
     }
+    this.power = total
   }
 }
 
