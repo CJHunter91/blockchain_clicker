@@ -10,14 +10,14 @@ class App extends Component {
     this.logic = new MiningLogic();
     this.state = {
       logic: this.logic,
-      text: this.logic.text
+      textData: this.logic.textData
     }
   }
   render() {
     return (
       <section id="main-view">
         <BlockStatus logic={this.state.logic}/>
-        <BlockchainInfo text={this.state.text}/>
+        <BlockchainInfo textData={this.state.textData}/>
       </section>
     );
   }
