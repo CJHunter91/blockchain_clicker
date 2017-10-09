@@ -5,6 +5,13 @@ class User {
     this.resources = [];
     this.power = 0;
   }
+
+
+  buy(resource){
+    if("canAfford function"){
+      this.resources.push(resource)
+    }
+  }
 }
 
 export default User;
