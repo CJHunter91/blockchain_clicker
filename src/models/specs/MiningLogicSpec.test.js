@@ -9,9 +9,13 @@ beforeEach(() => {
   logic = new MiningLogic();
 });
 
-test("should get next text TextItem", function(){
+test("should get next text TextItem", () => {
   var currentTextID = logic.textData.id;
   console.log(currentTextID)
   logic.loadNextText(); 
   expect(logic.textData.id).toBe(currentTextID + 1);
+})
+
+test("should list available resources", () => {
+  expect(typeof logic.resources[0].name).toBe('string');
 })

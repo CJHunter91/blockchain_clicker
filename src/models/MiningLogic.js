@@ -1,7 +1,8 @@
 import User from './User';
 import Block from './Block';
-import Rescource from './Resource';
+import Resource from './Resource';
 import textData from '../data/TextData'
+import resourceData from '../data/ResourceData'
 
 class MiningLogic{
 
@@ -15,6 +16,9 @@ class MiningLogic{
     this.user = new User();
     this.textData = textData[0];
     this.pendingTransactions = [];
+    this.resources = [];
+
+    this.loadResourceData();
 
     console.log(this.difficulty);
     console.log(this.currentBlock.hash)
@@ -38,6 +42,13 @@ class MiningLogic{
   loadNextText(){
     const id = this.textData.id;
     this.textData = textData[id];
+  }
+
+  loadResourceData(){
+    for(let resource of resourceData){
+      const newRescource = new Resource(resource.name, resource.cost, resource.multiplier)
+      this.resources.push(newRescource);
+    }
   }
 
 
