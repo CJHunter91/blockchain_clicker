@@ -50,6 +50,15 @@ class App extends Component {
     }
 
   render() {
+
+    // window.onclick = (e) =>{
+    //  const modal = document.getElementById('shop-list');
+    //  console.log(this.state.isModalOpen)
+    //  if (this.state.isModalOpen && e.target !== modal) {
+    //          this.closeModal()
+    //      }
+    // }
+
     return (
       <section id="main-view">
         <section id="block-game">
