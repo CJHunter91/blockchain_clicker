@@ -13,7 +13,8 @@ class App extends Component {
       logic: this.logic,
       textData: this.logic.textData,
       user: this.logic.user, 
-      block: this.logic.currentBlock
+      block: this.logic.currentBlock,
+      isModalOpen: false
     }
   }
 
@@ -40,16 +41,26 @@ class App extends Component {
     this.setState({user: userCopy})
   }
 
+    openModal() {
+      this.setState({ isModalOpen: true })
+    }
+
+    closeModal() {
+      this.setState({ isModalOpen: false })
+    }
+
   render() {
     return (
       <section id="main-view">
         <section id="block-game">
           <StatusBar user={this.state.user}/>
           <BlockView block={this.state.block}/>
-          <ShopView userBuy={this.buyResource.bind(this)} resources={this.state.logic.resources} />
+          <ShopView isOpen={this.state.isModalOpen} userBuy={this.buyResource.bind(this)}
+            resources={this.state.logic.resources}
+            closeModal={this.closeModal.bind(this)} />
           <div id="buttons">
             <button id="mine-btn" onClick={this.startMine.bind(this)}> Mine  </button>
-            <button id="shop-btn"> Shop </button>
+            <button id="shop-btn" onClick={this.openModal.bind(this)}> Shop </button>
           </div>
         </section>
         <BlockchainInfo textData={this.state.textData}/>

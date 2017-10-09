@@ -5,7 +5,7 @@ const ShopView = (props) => {
 
     return(
         <article id="shop-view" className="shop-modal">
-          <ShopList userBuy={props.userBuy} resources={props.resources}/>
+          <ShopList isOpen={props.isOpen} closeModal={props.closeModal} userBuy={props.userBuy} resources={props.resources}/>
         </article>
       )
 }
