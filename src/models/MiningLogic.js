@@ -24,6 +24,7 @@ class MiningLogic{
   rewardUser(){
     if(this.currentBlock.hash < this.difficulty){
         this.user.coin += this.reward;
+        this.pendingTransactions.unshift("User Awarded: " + this.reward + " coins")
         return true;
     }
   }

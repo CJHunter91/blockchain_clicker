@@ -1,9 +1,12 @@
 import React from 'react';
 
-const BlockTransactions = () => {
+const BlockTransactions = (props) => {
+
+
+
   return(
       <ul id="block-transactions" className="list">
-        <li>Coin: User >> 100 >> Shop</li>
+        <li>{props.transactions[0]}</li>
       </ul>
     )
 }

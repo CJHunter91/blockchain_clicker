@@ -8,7 +8,7 @@ class Block {
     this.number = Block.incrementNumber();
     this.prevHash = prevHash
     this.hash = null;
-    this.transactions = transactions
+    this.transactions = transactions;
     this.nonce = 0;
     this.convertToHash();
   }
