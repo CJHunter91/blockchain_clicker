@@ -23,7 +23,7 @@ class User {
       console.log(this.power)
       total += resource.multiplier;
     }
-    this.power = total
+    this.power = Number(total.toFixed(2));
   }
 }
 
