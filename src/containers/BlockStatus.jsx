@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import BlockView from './BlockView';
 import StatusBar from './StatusBar';
+import ShopView from './ShopView';
 
 class BlockStatus extends Component{
 
@@ -34,6 +35,7 @@ class BlockStatus extends Component{
       <section id="block-game">
         <StatusBar user={this.state.user}/>
         <BlockView block={this.state.block}/>
+        <ShopView />
         <div id="buttons">
           <button id="mine-btn" onClick={this.startMine.bind(this)}> Mine  </button>
           <button id="shop-btn"> Shop </button>
