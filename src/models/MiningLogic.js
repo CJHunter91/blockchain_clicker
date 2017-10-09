@@ -13,7 +13,7 @@ class MiningLogic{
     this.blocks = [];
     this.currentBlock = new Block();
     this.user = new User();
-    this.text = textData[0].text;
+    this.textData = textData[0];
     this.pendingTransactions = [];
 
     console.log(this.difficulty);
@@ -32,6 +32,11 @@ class MiningLogic{
     const prevHash = this.currentBlock.hash;
     this.currentBlock = new Block(prevHash, this.pendingTransactions);
 
+  }
+
+  loadNextText(){
+    const id = this.textData.id;
+    this.textData = textData[id];
   }
 
 
