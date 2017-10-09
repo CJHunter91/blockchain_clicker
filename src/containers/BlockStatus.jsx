@@ -18,10 +18,10 @@ class BlockStatus extends Component{
     blockCopy.addToNonce();
     if(this.state.logic.rewardUser()){
       this.state.logic.loadNextBlock()
-       blockCopy = this.state.logic.currentBlock;
-       const btn = document.querySelector('#mine-btn')
-       btn.disabled = true;
-       setTimeout(() => { btn.disabled = false }, 2000);
+      blockCopy = this.state.logic.currentBlock;
+      const btn = document.querySelector('#mine-btn')
+      btn.disabled = true;
+      setTimeout(() => { btn.disabled = false }, 2000);
     }
     this.setState({block: blockCopy});
     console.log(this.state.logic.difficulty);
@@ -32,10 +32,12 @@ class BlockStatus extends Component{
   render(){
     return(
       <section id="block-game">
-       <StatusBar user={this.state.user}/>
-       <BlockView block={this.state.block}/>
-       <button id="mine-btn" onClick={this.startMine.bind(this)}> Mine  </button>
-       <button id="shop-btn"> Shop </button>
+        <StatusBar user={this.state.user}/>
+        <BlockView block={this.state.block}/>
+        <div id="buttons">
+          <button id="mine-btn" onClick={this.startMine.bind(this)}> Mine  </button>
+          <button id="shop-btn"> Shop </button>
+        </div>
       </section>
       )
   }

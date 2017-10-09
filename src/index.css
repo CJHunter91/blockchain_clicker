@@ -10,13 +10,31 @@ article{
 
 #block-view{
   width: 90%;
-  margin: 10px;
+  margin: 10px auto;
   min-height: 200px;
 }
 
 #blockchain-info{
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 99%;
   min-height: 300px;
+  padding: 5px auto;
+}
+
+#blockchain-info p{
+  padding: 5px;
+}
+
+#block-game{
+  display: flex;
+  flex-direction: column;
+}
+
+#buttons{
+  display: flex;
+  justify-content: center;
+}
+#mine-btn, #shop-btn{
+  background-color: grey;
 }
