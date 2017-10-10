@@ -34,6 +34,7 @@ class MiningLogic{
 
   checkValidated(){
     if(this.currentBlock.hash < this.difficulty){
+      this.mining = false;
       return true;
     }
   }
@@ -63,19 +64,26 @@ class MiningLogic{
   }
 
   mineBlock(button, stateCallback){
-    const interval = setInterval(() => { this.increment(button,stateCallback, interval) }, 2000);
+    if(this.user.power > 0 && !this.mining && this.currentBlock.nonce === 1){
+      const time = 2000 - this.user.power
+      this.mining = true;
+      const interval = setInterval(() => { this.increment(button,stateCallback, interval) }, time);
+    }
+    else{
+      this.mining = true;
+      this.increment(button, stateCallback)
+    }
   }
 
   increment(button, stateCallback, interval){
     if(!this.checkValidated()){
       this.currentBlock.addToNonce();
-      console.log("hello");
     }
     else{
+      clearInterval(interval);
       this.rewardUser();
       this.loadNextBlock()
       this.loadNextText();
-      clearInterval(interval);
       button.disabled = true;
       setTimeout(() => { button.disabled = false }, 2000);
     }

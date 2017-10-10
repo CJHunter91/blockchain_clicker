@@ -4,7 +4,7 @@ const BlockTransactions = (props) => {
 
   const transactions = props.transactions.map((trans, index) => {
       return(
-          <li key="index">{trans}</li>
+          <li key={index}>{trans}</li>
         )
   })
 
