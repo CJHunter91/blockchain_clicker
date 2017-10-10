@@ -15,6 +15,7 @@ class MiningLogic{
     this.currentTextData = textData[0];
     this.pendingTransactions = [];
     this.resources = [];
+    this.mining = false;
 
     this.loadResourceData();
 
@@ -24,9 +25,15 @@ class MiningLogic{
   }
 
   rewardUser(){
-    if(this.currentBlock.hash < this.difficulty){
+    if(this.checkValidated()){
       this.user.coin += this.reward;
       this.pendingTransactions.unshift("User Awarded: " + this.reward + " coins")
+      return true;
+    }
+  }
+
+  checkValidated(){
+    if(this.currentBlock.hash < this.difficulty){
       return true;
     }
   }
@@ -55,15 +62,24 @@ class MiningLogic{
     }
   }
 
-  mineBlock(button, callback){
-    this.currentBlock.addToNonce()
-    if(this.rewardUser()){
+  mineBlock(button, stateCallback){
+    const interval = setInterval(() => { this.increment(button,stateCallback, interval) }, 2000);
+  }
+
+  increment(button, stateCallback, interval){
+    if(!this.checkValidated()){
+      this.currentBlock.addToNonce();
+      console.log("hello");
+    }
+    else{
+      this.rewardUser();
       this.loadNextBlock()
       this.loadNextText();
+      clearInterval(interval);
       button.disabled = true;
       setTimeout(() => { button.disabled = false }, 2000);
     }
-    callback();
+    stateCallback()
   }
 
   loadResourceData(){
