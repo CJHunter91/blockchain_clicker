@@ -1,7 +1,12 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+li{
+  list-style: none;
 }
 
 article{
@@ -12,6 +17,12 @@ article{
   width: 90%;
   margin: 10px auto;
   min-height: 200px;
+}
+
+#block-transactions{
+  overflow: auto;
+  overflow-y: scroll;
+  max-height: 100px;
 }
 
 #blockchain-info{
@@ -40,5 +51,3 @@ article{
   width: 20%;
   height: 50px
 }
-
-

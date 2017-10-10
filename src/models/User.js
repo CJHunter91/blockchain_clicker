@@ -10,13 +10,18 @@ class User {
 
   buy(resource){
     let didBuy = false;
-    if(this.coin >= resource.cost){
+    if(this.coin - resource.cost >= 0){
       this.resources.push(resource);
       this.transactions.push(resource);
       this.calculatePower();
+      this.removeCoin(resource.cost);
       didBuy = true;
     }
     return didBuy;
+  }
+
+  removeCoin(amount){
+    this.coin -= amount;
   }
 
   calculatePower(){

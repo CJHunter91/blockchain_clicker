@@ -1,12 +1,12 @@
 const ResourceData = [
 { 
   name: "Cpu",
-  cost: 1, 
+  cost: 18, 
   multiplier: 1.2
 }, 
 { 
   name: "Cpu2",
-  cost: 2, 
+  cost: 100, 
   multiplier: 1.3
 }
 ]
