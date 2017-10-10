@@ -11,6 +11,7 @@ const BlockTransactions = (props) => {
 
   return(
       <article id="block-transactions">
+      <h4>Transactions</h4>
         <ul className="list">
           {transactions}
         </ul>

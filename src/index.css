@@ -42,6 +42,11 @@ article{
   flex-direction: column;
 }
 
+#status-list li{
+  display: inline-block;
+  padding-right: 10px;
+}
+
 #buttons{
   display: flex;
   justify-content: space-around;
