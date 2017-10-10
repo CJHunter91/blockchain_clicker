@@ -7,7 +7,7 @@ import resourceData from '../data/ResourceData';
 class MiningLogic{
 
   constructor(){
-    this.difficulty = (10**15  - 1);
+    this.difficulty = (9**15  - 1);
     this.target = null;
     this.reward = 50;
     this.currentBlock = new Block();
@@ -67,7 +67,7 @@ class MiningLogic{
     this.mining = true;
     this.increment(button, stateCallback)
     if(this.user.power > 0 && this.currentBlock.nonce === 1){
-      const time = 2000 - this.user.power
+      const time = 500 - this.user.power
       this.mining = true;
       const interval = setInterval(() => { this.increment(button,stateCallback, interval) }, time);
     }
