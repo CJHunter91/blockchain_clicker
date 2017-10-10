@@ -7,7 +7,11 @@ const textData = [
 }, 
 {
   id: 2,
-  text: "Mining a block, just like in a real blockchain, can potentially reward you with a certain amount of crypto currency."
+  text: "Mining a block, just like in a real blockchain, can potentially reward you with an amount of crypto currency."
+},
+{
+  id: 3,
+  text: "Blah blah"
 }
 
 ]

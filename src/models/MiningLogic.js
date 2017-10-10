@@ -1,8 +1,8 @@
 import User from './User';
 import Block from './Block';
 import Resource from './Resource';
-import textData from '../data/TextData'
-import resourceData from '../data/ResourceData'
+import textData from '../data/TextData';
+import resourceData from '../data/ResourceData';
 
 class MiningLogic{
 
@@ -14,7 +14,7 @@ class MiningLogic{
     this.blocks = [];
     this.currentBlock = new Block();
     this.user = new User();
-    this.textData = textData[0];
+    this.currentTextData = textData[0];
     this.pendingTransactions = [];
     this.resources = [];
 
@@ -27,9 +27,9 @@ class MiningLogic{
 
   rewardUser(){
     if(this.currentBlock.hash < this.difficulty){
-        this.user.coin += this.reward;
-        this.pendingTransactions.unshift("User Awarded: " + this.reward + " coins")
-        return true;
+      this.user.coin += this.reward;
+      this.pendingTransactions.unshift("User Awarded: " + this.reward + " coins")
+      return true;
     }
   }
 
@@ -40,8 +40,13 @@ class MiningLogic{
   }
 
   loadNextText(){
-    const id = this.textData.id;
-    this.textData = textData[id];
+    const id = this.currentTextData.id;
+    if(textData.length === this.currentTextData.id){
+      this.currentTextData = textData[1];
+    }
+    else{
+      this.currentTextData = textData[id];
+    }
   }
 
   loadResourceData(){

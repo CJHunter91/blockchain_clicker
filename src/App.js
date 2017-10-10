@@ -8,10 +8,11 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.logic = new this.props.logic();
+    this.logic = this.props.logic;
+    console.log(this.props)
     this.state = {
       logic: this.logic,
-      textData: this.logic.textData,
+      textData: this.logic.currentTextData,
       user: this.logic.user, 
       block: this.logic.currentBlock,
       isModalOpen: false

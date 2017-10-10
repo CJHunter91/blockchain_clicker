@@ -2,10 +2,10 @@ import React from 'react';
 
 const ShopList = (props) => {
 
-  const resourceList= props.resources.map((resource) => {
+  const resourceList= props.resources.map((resource, index) => {
     return(
       <li>{resource.name} Cost: {resource.cost}
-      <button onClick={() => { props.userBuy(resource) } } className="buttons">
+      <button key={index} onClick={() => { props.userBuy(resource) } } className="buttons">
       Buy
       </button>
       </li>
