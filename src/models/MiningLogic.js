@@ -55,7 +55,7 @@ class MiningLogic{
     }
   }
 
-  mineBlock(button){
+  mineBlock(button, callback){
     this.currentBlock.addToNonce()
     if(this.rewardUser()){
       this.loadNextBlock()
@@ -63,6 +63,7 @@ class MiningLogic{
       button.disabled = true;
       setTimeout(() => { button.disabled = false }, 2000);
     }
+    callback();
   }
 
   loadResourceData(){

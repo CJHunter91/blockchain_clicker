@@ -20,9 +20,12 @@ class App extends Component {
 
   startMine(){
     const btn = document.querySelector('#mine-btn')
-    this.state.logic.mineBlock(btn);
-    this.setState({block: this.state.logic.currentBlock});
-    this.setState({textData: this.state.logic.currentTextData})
+    const stateCallback = () => {
+      this.setState({block: this.state.logic.currentBlock});
+      this.setState({textData: this.state.logic.currentTextData})
+    }
+    this.state.logic.mineBlock(btn, stateCallback);
+    
   }
 
   buyResource(resource){
