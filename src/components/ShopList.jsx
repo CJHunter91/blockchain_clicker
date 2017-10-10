@@ -22,7 +22,9 @@ const ShopList = (props) => {
    width: '50%',
    transform: 'translate(-50%, -50%)',
    zIndex: '9999',
-   background: '#fff'
+   background: '#9ad3de',
+   'border-radius': '10px',
+   border: 'solid white 2px'
  }
 
  if (props.style) {

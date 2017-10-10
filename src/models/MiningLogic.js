@@ -86,7 +86,6 @@ class MiningLogic{
       clearInterval(interval); 
     }
     else{
-      console.log("add to nonce")
       this.currentBlock.addToNonce();
     }
     stateCallback()
