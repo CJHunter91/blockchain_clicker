@@ -20,8 +20,8 @@ render(){
    position: 'absolute',
    top: '50%',
    left: '50%',
-   height: '50%',
-   width: '50%',
+   height: '80%',
+   width: '80%',
    transform: 'translate(-50%, -50%)',
    zIndex: '9999',
    background: '#9ad3de',
@@ -56,6 +56,7 @@ render(){
   <article >
     <section id="shop-list" className="modal-content" style={modalStyle}>
     <span onClick={this.props.closeModal} className="close">&times;</span>
+    <h4>Bits and Bytes Computer Shop</h4>
       <ul>
       {resources}
       </ul>
