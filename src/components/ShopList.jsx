@@ -1,19 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const ShopList = (props) => {
+class ShopList extends Component{
 
-  const resourceList= props.resources.map((resource, index) => {
-    return(
-      <li key={index}>{resource.name} Cost: {resource.cost}
-      <button key={index} onClick={() => { props.userBuy(resource) } } className="buttons">
-      Buy
-      </button>
-      </li>
-      )
-  })
+render(){
 
-  if (props.isOpen === false)
-   return null
+  const resources = this.props.resources.map((resource, index) => {
+  return(
+    <li key={index}>{resource.name} Cost: {resource.cost}
+    <button key={index} onClick={() => { this.props.userBuy(resource) } } className="buttons">
+    Buy
+    </button>
+    </li>
+    )})
+
+  if (this.props.isOpen === false)
+     return null
+
  let modalStyle = {
    position: 'absolute',
    top: '50%',
@@ -23,13 +25,13 @@ const ShopList = (props) => {
    transform: 'translate(-50%, -50%)',
    zIndex: '9999',
    background: '#9ad3de',
-   'border-radius': '10px',
+   borderRadius: '10px',
    border: 'solid white 2px'
  }
 
- if (props.style) {
-   for (let key in props.style) {
-     modalStyle[key] = props.style[key]
+ if (this.props.style) {
+   for (let key in this.props.style) {
+     modalStyle[key] = this.props.style[key]
    }
  }
 
@@ -43,20 +45,33 @@ const ShopList = (props) => {
    background: 'rgba(0, 0, 0, 0.3)'
  }
 
- if (props.backdropStyle) {
-   for (let key in props.backdropStyle) {
-     backdropStyle[key] = props.backdropStyle[key]
+ if (this.props.backdropStyle) {
+   for (let key in this.props.backdropStyle) {
+     backdropStyle[key] = this.props.backdropStyle[key]
    }
  }
 
  return(
-    <article id="shop-list" className="modal-content" style={modalStyle}>
-    <span onClick={props.closeModal} className="close">&times;</span>
-    <ul>
-    {resourceList}
-    </ul>
-    </article>
+
+  <article >
+    <section id="shop-list" className="modal-content" style={modalStyle}>
+    <span onClick={this.props.closeModal} className="close">&times;</span>
+      <ul>
+      {resources}
+      </ul>
+    </section>
+    <div style={backdropStyle} onClick={e => this.close(e)}/>
+  </article>
   )
+}
+close(e) {
+ e.preventDefault()
+
+ if (this.props.closeModal) {
+   this.props.closeModal()
+ }
+}
 }
 
 export default ShopList;
+

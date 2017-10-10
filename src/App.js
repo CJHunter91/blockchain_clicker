@@ -48,14 +48,6 @@ class App extends Component {
 
   render() {
 
-    // window.onclick = (e) =>{
-    //  const modal = document.getElementById('shop-list');
-    //  console.log(this.state.isModalOpen)
-    //  if (this.state.isModalOpen && e.target !== modal) {
-    //          this.closeModal()
-    //      }
-    // }
-
     return (
       <section id="main-view">
         <section id="block-game">
@@ -63,7 +55,7 @@ class App extends Component {
           <BlockView block={this.state.block}/>
           <ShopView isOpen={this.state.isModalOpen} userBuy={this.buyResource.bind(this)}
             resources={this.state.logic.resources}
-            closeModal={this.closeModal.bind(this)} />
+            closeModal={this.closeModal.bind(this)}/>
           <div id="buttons">
             <button id="mine-btn" onClick={this.startMine.bind(this)}> Mine  </button>
             <button id="shop-btn" onClick={this.openModal.bind(this)}> Shop </button>
