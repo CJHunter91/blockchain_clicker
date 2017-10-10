@@ -4,7 +4,7 @@ const ShopList = (props) => {
 
   const resourceList= props.resources.map((resource, index) => {
     return(
-      <li>{resource.name} Cost: {resource.cost}
+      <li key={index}>{resource.name} Cost: {resource.cost}
       <button key={index} onClick={() => { props.userBuy(resource) } } className="buttons">
       Buy
       </button>

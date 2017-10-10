@@ -4,13 +4,15 @@ class User {
     this.coin = 0;
     this.resources = [];
     this.power = 0;
+    this.transactions = [];
   }
 
 
   buy(resource){
     let didBuy = false;
     if(this.coin >= resource.cost){
-      this.resources.push(resource)
+      this.resources.push(resource);
+      this.transactions.push(resource);
       this.calculatePower();
       didBuy = true;
     }
@@ -18,9 +20,9 @@ class User {
   }
 
   calculatePower(){
-    var total = 0
+    var total = 0;
     for(let resource of this.resources){
-      console.log(this.power)
+      console.log(this.power);
       total += resource.multiplier;
     }
     this.power = Number(total.toFixed(2));

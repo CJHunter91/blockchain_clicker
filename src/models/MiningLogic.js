@@ -33,10 +33,18 @@ class MiningLogic{
     }
   }
 
+  processUserTransactions(){
+    for(let trans of this.user.transactions){
+      const string = `User buys: ${trans.name}(${trans.cost}) from Shop`
+      this.pendingTransactions.push(string);
+    }
+  }
+
   loadNextBlock(){
     const prevHash = this.currentBlock.hash;
     this.currentBlock = new Block(prevHash, this.pendingTransactions);
-
+    this.user.transactions = [];
+    this.pendingTransactions = [];
   }
 
   loadNextText(){

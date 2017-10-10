@@ -9,7 +9,6 @@ class App extends Component {
   constructor(props){
     super(props)
     this.logic = this.props.logic;
-    console.log(this.props)
     this.state = {
       logic: this.logic,
       textData: this.logic.currentTextData,
@@ -27,6 +26,9 @@ class App extends Component {
       blockCopy = this.state.logic.currentBlock;
       const btn = document.querySelector('#mine-btn')
       btn.disabled = true;
+      //load next information
+      this.state.logic.loadNextText()
+      this.setState({textData: this.state.logic.currentTextData})
       setTimeout(() => { btn.disabled = false }, 2000);
     }
     this.setState({block: blockCopy});
@@ -38,8 +40,11 @@ class App extends Component {
   buyResource(resource){
     var userCopy = this.state.user;
     console.log(userCopy, this, resource)
-    userCopy.buy(resource);
-    this.setState({user: userCopy})
+    if(userCopy.buy(resource)){
+      this.state.logic.processUserTransactions();
+      this.setState({user: userCopy})
+    }
+    
   }
 
     openModal() {
