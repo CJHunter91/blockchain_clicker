@@ -19,22 +19,10 @@ class App extends Component {
   }
 
   startMine(){
-    var blockCopy = this.state.block;
-    blockCopy.addToNonce();
-    if(this.state.logic.rewardUser()){
-      this.state.logic.loadNextBlock()
-      blockCopy = this.state.logic.currentBlock;
-      const btn = document.querySelector('#mine-btn')
-      btn.disabled = true;
-      //load next information
-      this.state.logic.loadNextText()
-      this.setState({textData: this.state.logic.currentTextData})
-      setTimeout(() => { btn.disabled = false }, 2000);
-    }
-    this.setState({block: blockCopy});
-    console.log(this.state.logic.difficulty);
-    console.log(this.state.block.hash)
-    console.log(this.state.block.hash < this.state.logic.difficulty)
+    const btn = document.querySelector('#mine-btn')
+    this.state.logic.mineBlock(btn);
+    this.setState({block: this.state.logic.currentBlock});
+    this.setState({textData: this.state.logic.currentTextData})
   }
 
   buyResource(resource){

@@ -7,11 +7,9 @@ import resourceData from '../data/ResourceData';
 class MiningLogic{
 
   constructor(){
-    this.attemptedMines = 0;
     this.difficulty = (10**15  - 1);
     this.target = null;
     this.reward = 50;
-    this.blocks = [];
     this.currentBlock = new Block();
     this.user = new User();
     this.currentTextData = textData[0];
@@ -54,6 +52,16 @@ class MiningLogic{
     }
     else{
       this.currentTextData = textData[id];
+    }
+  }
+
+  mineBlock(button){
+    this.currentBlock.addToNonce()
+    if(this.rewardUser()){
+      this.loadNextBlock()
+      this.loadNextText();
+      button.disabled = true;
+      setTimeout(() => { button.disabled = false }, 2000);
     }
   }
 
