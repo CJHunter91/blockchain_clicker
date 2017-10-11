@@ -11,7 +11,7 @@ class Block {
     this.transactions = transactions;
     this.nonce = 0;
     this.difficulty = difficulty;
-    this.attributes = [this.hash, this.prevHash, this.difficulty]
+    this.attributes = [this.difficulty, this.prevHash, this.hash]
     this.convertToHash();
     this.processAttributes();
   }
@@ -29,13 +29,12 @@ class Block {
     + this.nonce.toString();
     const decimal = converter.hexToDec(sha256(concat))
     this.hash = decimal / (10 ** (77 - 16))
-    this.attributes[0] = this.hash;
+    this.attributes[2] = this.hash;
   }
 
   addToNonce(){
     this.nonce++
     this.convertToHash()
-    this.attributes[0] = this.hash;
     this.processAttributes();
   }
 
