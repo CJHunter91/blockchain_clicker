@@ -11,3 +11,11 @@ MVP
 * Shows a basic block 
 * User gets cryptocurrency from mining
 * User can buy more mining rescources
+
+Installation
+
+ * Install Node.js
+ * Install NPM 
+ * Run `npm install` in the root directory
+ * Use `npm start` to start the server
+ * Use web browser to visit [http://localhost:3000/](http://localhost:3000/)
