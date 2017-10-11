@@ -36,6 +36,11 @@ class MiningLogic{
 
   checkValidated(){
     if(this.currentBlock.hash < this.currentBlock.difficulty){
+      const block = document.querySelector('#block-view');
+      block.classList.add("block-colour");
+      setTimeout(()=>{
+      block.classList.remove("block-colour");
+      }, 2100)
       this.mining = false;
       return true;
     }
@@ -68,7 +73,7 @@ class MiningLogic{
   mineBlock(button, stateCallback){
     this.mining = true;
     this.increment(button, stateCallback)
-    if(this.user.power > 0 && this.currentBlock.nonce === 1){
+    if(this.user.power > 0 && this.currentBlock.nonce >=1){
       this.mining = true;
       const interval = setInterval(() => { this.increment(button,stateCallback, interval) }, this.time - this.user.power);
     }

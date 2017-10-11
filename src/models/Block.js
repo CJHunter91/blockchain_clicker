@@ -41,20 +41,16 @@ class Block {
   processAttributes(){
     const processedAttributes = this.attributes.map((attribute) => {
       var number = Math.round(parseInt(attribute));
-      console.log(number.toString())
       if(number.toString().length < 18){
         let arr = number.toString().split('');
-        console.log(arr);
         while(arr.length < 16){
           arr.unshift("0")
         }
-        console.log(arr.join('').toString());
         return arr.join('').toString(); 
       }
 
     })
     this.attributes = processedAttributes;
-    console.log(processedAttributes)
   }
 
 }

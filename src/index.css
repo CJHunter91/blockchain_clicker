@@ -26,6 +26,19 @@ li{
   perspective: 1000px;
 }
 
+.block-colour {
+  -webkit-animation-name: greenfade; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: greenfade;
+  animation-duration: 2s; 
+}
+
+@keyframes greenfade{
+  0% {box-shadow: 10px 10px 5px #888888;}
+  50% {box-shadow: 15px 20px 10px #3b774d;}
+  100% {box-shadow: 10px 10px 5px #888888;}
+}
+
 h4{
   text-align: center;
   padding: 0px;
