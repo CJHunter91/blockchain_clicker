@@ -3,7 +3,7 @@
 const textData = [
 { 
   id: 1,
-  text: "Welcome to the Blockchain Clicker app. Hit the mine button to start playing and learning."
+  text: "Welcome to the Blockchain Clicker app. Continually hit the mine button to start playing and learning."
 }, 
 {
   id: 2,
@@ -23,15 +23,15 @@ const textData = [
 },
 {
   id: 6,
-  text: "The prevHash refers to the previous blocks hash which creates the chain. Each block will be linked back to the first gensis block"
+  text: "The prevHash refers to the previous blocks hash which creates the chain. Each block will be linked back to the first genesis block"
 },
 {
   id: 7,
-  text: "The more miners there are the harder the difficulty. It requires a lot of energy. This stops anyone from taking control of the blockchain, assuming they have less than 51% of the global processing power."
+  text: "The more miners there are the harder the difficulty. The act of mining requires a lot of energy but this stops anyone from taking control of the blockchain, assuming they have less than 51% of the global processing power."
 },
 {
   id: 8,
-  text: "All transactions on the Bitcoin blockchain are publically avaiable creating transparent transactions. Bitcoins can only be created by the mining rewards. This controls the global number of bitcoins"
+  text: "All transactions on the Bitcoin blockchain are publically available creating transparent transactions. Bitcoins can only be created from mining rewards. This controls the global number of Bitcoins"
 }
 
 ]

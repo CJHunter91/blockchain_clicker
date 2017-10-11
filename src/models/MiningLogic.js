@@ -29,11 +29,11 @@ class MiningLogic{
     if(this.checkValidated()){
       this.user.coin += this.reward;
       this.pendingTransactions.unshift("User Awarded: " + this.reward + " coins")
-      this.difficulty -= 10**14;
+      this.difficulty -= this.difficulty * 0.2;
       const coin = document.querySelector('#coin');
       coin.classList.add('coin')
       setTimeout(()=>{
-      coin.classList.remove("coin");
+        coin.classList.remove("coin");
       }, 2100)
       return true;
     }
@@ -44,7 +44,7 @@ class MiningLogic{
       const block = document.querySelector('#block-view');
       block.classList.add("block-colour");
       setTimeout(()=>{
-      block.classList.remove("block-colour");
+        block.classList.remove("block-colour");
       }, 2100)
       this.mining = false;
       return true;
@@ -55,6 +55,8 @@ class MiningLogic{
     for(let trans of this.user.transactions){
       const string = `User buys: ${trans.name}(${trans.cost}) from Shop`
       this.pendingTransactions.push(string);
+      this.difficulty += this.difficulty * (trans.multiplier/100)
+
     }
   }
 
@@ -78,7 +80,7 @@ class MiningLogic{
   mineBlock(button, stateCallback){
     this.mining = true;
     this.increment(button, stateCallback)
-    if(this.user.power > 0 && this.currentBlock.nonce >=1){
+    if(this.user.power > 0 && this.currentBlock.nonce ===1){
       this.mining = true;
       const interval = setInterval(() => { this.increment(button,stateCallback, interval) }, this.time - this.user.power);
     }
