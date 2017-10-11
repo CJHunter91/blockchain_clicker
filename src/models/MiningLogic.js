@@ -30,6 +30,11 @@ class MiningLogic{
       this.user.coin += this.reward;
       this.pendingTransactions.unshift("User Awarded: " + this.reward + " coins")
       this.difficulty -= 10**14;
+      const coin = document.querySelector('#coin');
+      coin.classList.add('coin')
+      setTimeout(()=>{
+      coin.classList.remove("coin");
+      }, 2100)
       return true;
     }
   }

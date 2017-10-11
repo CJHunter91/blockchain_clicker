@@ -55,7 +55,7 @@ render(){
 
   <article >
     <section id="shop-list" className="modal-content" style={modalStyle}>
-    <span onClick={this.props.closeModal} className="close">&times;</span>
+    <span id="close" onClick={this.props.closeModal} className="close">&times;</span>
     <h4>Bits and Bytes Computer Shop</h4>
       <ul>
       {resources}

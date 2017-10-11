@@ -115,11 +115,34 @@ h4{
   border: none;
 }
 
-span{
+#close{
   float: right;
   position: relative;
   left: -10px;
   font-size: 30px;
+}
+
+.coin{
+  position: relative;
+  -webkit-animation-name: enlarge; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: enlarge;
+  animation-duration: 4s; 
+}
+
+@keyframes enlarge{
+  25%{
+    font-size:20px;
+  }
+  50%{
+    font-size: initial;
+  }
+  75%{
+    font-size: 20px;
+  }
+  100%{
+    font-size: initial;
+  }
 }
 
 @keyframes shake {
