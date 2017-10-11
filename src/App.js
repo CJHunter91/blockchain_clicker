@@ -19,12 +19,17 @@ class App extends Component {
   }
 
   startMine(){
+    const block = document.querySelector('#block-view');
+    block.className = '';
     const btn = document.querySelector('#mine-btn')
     const stateCallback = () => {
       this.setState({block: this.state.logic.currentBlock});
       this.setState({textData: this.state.logic.currentTextData})
     }
     this.state.logic.mineBlock(btn, stateCallback);
+    var newone = block.cloneNode(true);
+    block.parentNode.replaceChild(newone, block);
+    block.className = 'block-animation';
     
   }
 
