@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BlockchainInfo from './containers/BlockchainInfo'
 import BlockView from './containers/BlockView';
-import StatusBar from './containers/StatusBar';
+import StatusBar from './components/StatusBar';
 import ShopView from './containers/ShopView';
 
 class App extends Component {
