@@ -1,4 +1,5 @@
 import React from 'react';
+import './BlockchainInfo.css';
 
 const BlockchainInfo = (props) => {
 

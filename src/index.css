@@ -56,18 +56,6 @@ h4{
   max-height: 100px;
 }
 
-#blockchain-info{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  min-height: 300px;
-  padding: 5px auto;
-  background-color: #89bdd3;
-  border-radius: 5px 5px 0px 0px;
-}
-
-
-
 #shop-list li{
   padding-top: 20px;
 }
