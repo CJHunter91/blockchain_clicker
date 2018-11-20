@@ -17,8 +17,6 @@ test("should get next text TextItem", () => {
 test("should loop text to second [1] text item", () => {
   var currentTextID = logic.currentTextData.id;
   logic.loadNextText(); 
-  logic.loadNextText(); 
-  logic.loadNextText(); 
   expect(logic.currentTextData.id).toBe(currentTextID + 1);
 })
 
