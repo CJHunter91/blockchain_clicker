@@ -5,8 +5,14 @@
 #shop-list ul{
     margin: 0px;
     padding: 10px;
-    font-size: 3.0vw;
+    font-size: 3vw;
   }
+
+@media screen and (min-width: 700px) {
+  #shop-list ul {
+      font-size: 20px;
+  }
+}
 
 #shop-list button{
     float: right;
