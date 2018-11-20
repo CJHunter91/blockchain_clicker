@@ -5,7 +5,7 @@ const ShopView = (props) => {
 
     const resources = props.resources.map((resource, index) => {
         return (
-            <li key={index}>{resource.name} Cost: {resource.cost}
+            <li key={index}>{resource.name} Cost: {resource.cost} Power: {resource.multiplier}
                 <button key={index} onClick={() => { props.userBuy(resource) }} className="buttons">
                     Buy
                 </button>

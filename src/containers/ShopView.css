@@ -5,9 +5,10 @@
 #shop-list ul{
     margin: 0px;
     padding: 10px;
+    font-size: 3.0vw;
   }
 
-  #shop-list button{
+#shop-list button{
     float: right;
     margin-right: 5%;
     background-color: #89bdd3;

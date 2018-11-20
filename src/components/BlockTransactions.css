@@ -1,6 +1,12 @@
-#block-transactions{
+
+  #block-transactions ul{
     overflow: auto;
     overflow-y: scroll;
-    max-height: 100px;
+    overflow-x: scroll;
+    max-height: 50px;
   }
+
+#block-transactions p{
+  padding-left: 40px;
+}
   
