@@ -1,4 +1,5 @@
 import MiningLogic from '../MiningLogic'
+import textData from '../../data/TextData';
 
 //add test for getting next text data
 
@@ -9,15 +10,16 @@ beforeEach(() => {
 });
 
 test("should get next text TextItem", () => {
-  var currentTextID = logic.currentTextData.id;
+  var currentIndex = logic.currentTextDataIndex;
   logic.loadNextText(); 
-  expect(logic.currentTextData.id).toBe(currentTextID + 1);
+  expect(logic.currentTextDataIndex).toBe(currentIndex + 1);
 })
 
-test("should loop text to second [1] text item", () => {
-  var currentTextID = logic.currentTextData.id;
+test("should loop text to second text item after looping through all text", () => {
+  logic.currentTextData= textData[textData.length - 1];
+  logic.currentTextDataIndex = textData.length - 1;
   logic.loadNextText(); 
-  expect(logic.currentTextData.id).toBe(currentTextID + 1);
+  expect(logic.currentTextDataIndex).toBe(1);
 })
 
 test("should list available resources", () => {

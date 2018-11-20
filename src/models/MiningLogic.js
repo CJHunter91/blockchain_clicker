@@ -12,6 +12,7 @@ class MiningLogic{
     this.reward = 50;
     this.user = new User();
     this.currentTextData = textData[0];
+    this.currentTextDataIndex = 0;
     this.pendingTransactions = [];
     this.resources = [];
     this.mining = false;
@@ -68,12 +69,15 @@ class MiningLogic{
   }
 
   loadNextText(){
-    const id = this.currentTextData.id;
-    if(textData.length === this.currentTextData.id){
+    const currentIndex = this.currentTextDataIndex;
+    const nextIndex = currentIndex + 1
+    if(textData.length === currentIndex + 1){
       this.currentTextData = textData[1];
+      this.currentTextDataIndex = 1;
     }
     else{
-      this.currentTextData = textData[id];
+      this.currentTextData = textData[currentIndex + 1];
+      this.currentTextDataIndex = nextIndex;
     }
   }
 
