@@ -1,4 +1,5 @@
 import React from 'react';
+import './ShopView.css'
 
 const ShopView = (props) => {
 

@@ -1,0 +1,6 @@
+#block-transactions{
+    overflow: auto;
+    overflow-y: scroll;
+    max-height: 100px;
+  }
+  

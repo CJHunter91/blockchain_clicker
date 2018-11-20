@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './BlockTransactions.css'
 const BlockTransactions = (props) => {
 
   const transactions = () => {

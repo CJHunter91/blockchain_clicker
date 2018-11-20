@@ -1,6 +1,7 @@
 import React from 'react';
 import BlockAttr from '../components/BlockAttr';
 import BlockTransactions from '../components/BlockTransactions';
+import './BlockView.css';
 
 const BlockView = (props) => {
 

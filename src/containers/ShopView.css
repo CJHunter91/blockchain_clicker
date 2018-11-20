@@ -1,0 +1,18 @@
+#shop-list li{
+    padding-top: 20px;
+  }
+  
+#shop-list ul{
+    margin: 0px;
+    padding: 10px;
+  }
+
+  #shop-list button{
+    float: right;
+    margin-right: 5%;
+    background-color: #89bdd3;
+    border-radius: 10px;
+    border: none;
+    width: 20%;
+    height: 20px;
+  }

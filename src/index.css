@@ -3,40 +3,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #c9c9c9;
 }
 
 li{
   list-style: none;
-}
-
-#block-view{
-  border-radius: 5px;
-  width: 90%;
-  margin: 10px auto;
-  min-height: 200px;
-  background-color: #e3e3e3;
-  box-shadow: 10px 10px 5px #888888;
-}
-
-.block-animation {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.block-colour {
-  -webkit-animation-name: greenfade; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
-  animation-name: greenfade;
-  animation-duration: 2s; 
-}
-
-@keyframes greenfade{
-  0% {box-shadow: 10px 10px 5px #888888;}
-  50% {box-shadow: 15px 20px 10px #3b774d;}
-  100% {box-shadow: 10px 10px 5px #888888;}
 }
 
 h4{
@@ -45,48 +15,9 @@ h4{
   margin: 5px;
 }
 
-#status{
- background-color: #9ad3de;
- border-radius: 0px 0px 5px 5px;
-}
-
-#block-transactions{
-  overflow: auto;
-  overflow-y: scroll;
-  max-height: 100px;
-}
-
-#shop-list li{
-  padding-top: 20px;
-}
-
-#shop-list ul{
-  margin: 0px;
-  padding: 10px;
-}
-#shop-list button{
-  float: right;
-  margin-right: 5%;
-  background-color: #89bdd3;
-  border-radius: 10px;
-  border: none;
-  width: 20%;
-  height: 20px;
-}
-
-#blockchain-info p{
-  padding: 10px;
-  font-size: 22px;
-}
-
 #block-game{
   display: flex;
   flex-direction: column;
-}
-
-#status-list li{
-  display: inline-block;
-  padding-right: 10px;
 }
 
 #buttons{
@@ -108,45 +39,4 @@ h4{
   position: relative;
   left: -10px;
   font-size: 30px;
-}
-
-.coin{
-  position: relative;
-  -webkit-animation-name: enlarge; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  animation-name: enlarge;
-  animation-duration: 4s; 
-}
-
-@keyframes enlarge{
-  25%{
-    font-size:20px;
-  }
-  50%{
-    font-size: initial;
-  }
-  75%{
-    font-size: 20px;
-  }
-  100%{
-    font-size: initial;
-  }
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
 }
