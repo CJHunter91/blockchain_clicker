@@ -4,7 +4,7 @@ import './Modal.css'
 const Modal = (props) => {
  return (
     <React.Fragment>
-        <section id={props.modalId} className="modal-content">
+        <section id={props.id} className="modal-content">
             <span id="close" onClick={props.closeModal} className="close">&times;</span>
             {props.children}
         </section>

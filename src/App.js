@@ -59,6 +59,7 @@ class App extends Component {
           <ShopView isOpen={this.state.isModalOpen} userBuy={this.buyResource.bind(this)}
             resources={this.state.logic.resources}
             closeModal={this.closeModal.bind(this)}/>
+          <GameInfo isOpen={this.state.isModalOpen} closeModal={this.closeModal.bind(this)}/>
           <div id="buttons">
             <button id="mine-btn" onClick={this.startMine.bind(this)}> Mine  </button>
             <button id="shop-btn" onClick={this.openModal.bind(this)}> Shop </button>

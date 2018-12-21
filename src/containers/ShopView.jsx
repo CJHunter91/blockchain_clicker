@@ -20,7 +20,7 @@ const ShopView = (props) => {
 
     return (
 
-        <Modal modalId="shop-list" closeModal={props.closeModal}>               
+        <Modal id="shop-list" closeModal={props.closeModal}>               
                 <h4>Bits and Bytes Computer Shop</h4>
                 <ul>
                     {resources}
