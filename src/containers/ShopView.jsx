@@ -1,11 +1,13 @@
 import React from 'react';
+
+import Modal from '../components/Modal';
 import './ShopView.css'
 
 const ShopView = (props) => {
 
     const resources = props.resources.map((resource, index) => {
         return (
-            <li key={index}>{resource.name} Cost: {resource.cost} Power: {resource.multiplier}
+            <li className="shop-list-item" key={index}>{resource.name} Cost: {resource.cost} Power: {resource.multiplier}
                 <button key={index} onClick={() => { props.userBuy(resource) }} className="buttons">
                     Buy
                 </button>
@@ -18,16 +20,12 @@ const ShopView = (props) => {
 
     return (
 
-        <article >
-            <section id="shop-list" className="modal-content">
-                <span id="close" onClick={props.closeModal} className="close">&times;</span>
+        <Modal modalId="shop-list" closeModal={props.closeModal}>               
                 <h4>Bits and Bytes Computer Shop</h4>
                 <ul>
                     {resources}
                 </ul>
-            </section>
-            <div className="backdrop" onClick={e => props.closeModal(e)} />
-        </article>
+        </Modal>
     )
 }
 export default ShopView;

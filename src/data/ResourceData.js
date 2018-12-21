@@ -22,7 +22,7 @@ const ResourceData = [
 { 
   name: "Intel i7",
   cost: 200, 
-  multiplier: 100
+  multiplier: 130
 },
 { 
   name: "Voodoo 2 GPU",
@@ -46,7 +46,7 @@ const ResourceData = [
 },
 { 
   name: "Gekko Science",
-  cost: 3200, 
+  cost: 3000, 
   multiplier: 4000
 }
 

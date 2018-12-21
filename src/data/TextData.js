@@ -15,6 +15,9 @@ const textData = [
 },
 {
   text: "Once you have purchased some processing power, hitting the mine button will start automatically mining at a slow rate. This will get faster the more power you have."
+},
+{
+  text: "You can also keep hitting the mine button to increase the nonce, manually adding to your processing power."
 }, 
 {
   text: "As the number of blocks mined increases the difficulty to process each block also increases. This keeps the time to mine a block in Bitcoin at around 10mins. The difficulty is re-calculated after 2016 blocks have been mined."

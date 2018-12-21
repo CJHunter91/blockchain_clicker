@@ -14,7 +14,7 @@ class App extends Component {
       textData: this.logic.currentTextData,
       user: this.logic.user, 
       block: this.logic.currentBlock,
-      isModalOpen: false
+      isModalOpen: true,
     }
   }
 
